@@ -1,7 +1,7 @@
+import os
 import discord
 from discord import Intents
 from discord import Message
-import os
 
 
 intents = Intents.all()
@@ -29,7 +29,7 @@ async def on_message(message: Message):
         await message.channel.send('ok....zzzzz')
         await bot.close()
     elif 'comandos' in mensaje:
-        await message.channel.send('Por el momento solo puedo saludar con "saluda" y dormir con "duerme"')
+        await message.channel.send('Por el momento solo puedo saludar y dormir')
     else:
         await message.channel.send('jejeje no entendi')
 
