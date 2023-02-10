@@ -9,7 +9,7 @@ discord = "*"
 [dev-packages]
 
 [scripts]
-dev="python main.py"
+dev="python ./src/main.py"
 
 [requires]
 python_version = "3.9"

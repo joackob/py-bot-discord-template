@@ -18,18 +18,19 @@ async def on_message(message):
         return
 
     mensaje = str(message.content)
+    autor = str(message.author)
 
-    print(mensaje)
+    print(f'Escuche el mensaje: "{mensaje}" de {autor}')
 
     if 'saluda' in mensaje:
         await message.channel.send('Como va gentee @everyone')
 
     elif 'duerme' in mensaje:
         await message.channel.send('ok....zzzzz')
+        await bot.close()
 
     else:
         await message.channel.send('jejeje no entendi')
 
 
-print(os.getenv('TOKEN'))
 bot.run(os.getenv('TOKEN'))
