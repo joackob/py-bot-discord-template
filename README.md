@@ -27,15 +27,13 @@ Tener actualizado `python` a la versión `lts`. Si desea asegurarse, puede ejecu
 
 Por último, instalar o actualizar `pipenv` como gestor de dependencias para este proyecto. Esto se puede hacer mediante el comando `pip install --user pipenv`. Para más información, visitar https://pipenv.pypa.io/en/latest/
 
-
-
 ## Variables de entorno
 
 - 🔐TOKEN: token de seguridad provisto por el [portal de desarrolladores](https://discord.com/developers/applications) de discord para cada bot. Adjunto a este proyecto existe un archivo `.env.example` que puede usar para colocar su propio token.
 
 ## Instalación y ejecución
 
-- 🛠Para instalar las dependencias ejecutar el siguiente comando `pipenv install`
-- ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run dev`
+- 🛠Para instalar las dependencias ejecutar el siguiente comando `pipenv install` (o `pip install -r requirements.txt`)
+- ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run dev` (o `python ./src/main.py`)
 
  
