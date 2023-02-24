@@ -8,7 +8,7 @@ Por lo mencionado anteriormente, es posible que discord rechace bot que se encue
 
 ```python
 intents = Intents.all()
-bot = discord.Client(intents=intents)
+bot = Client(intents=intents)
 ```
 
 La clase `Intents` es la encargada de solicitar los permisos necesarios por parte de la aplicación cliente. Si desde el [portal de desarrollo](https://discord.com/developers/applications) no se configuraron los permisos adecuadamente, es probable que la línea `intents = Intents.all()` cause algunos problemas. Pero si se siguió el [tutorial](https://www.pragnakalp.com/create-discord-bot-using-python-tutorial-with-examples/) adecuadamente, no debería haber inconvenientes.
