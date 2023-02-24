@@ -1,11 +1,11 @@
 import os
-import discord
 from discord import Intents
 from discord import Message
+from discord import Client
 
 
 intents = Intents.all()
-bot = discord.Client(intents=intents)
+bot = Client(intents=intents)
 
 
 @bot.event
