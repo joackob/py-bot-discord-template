@@ -34,6 +34,4 @@ Por último, instalar o actualizar `pipenv` como gestor de dependencias para est
 ## Instalación y ejecución
 
 - 🛠Para instalar las dependencias ejecutar el siguiente comando `pipenv install` (o `pip install -r requirements.txt`)
-- ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run dev` (o `python ./src/main.py`)
-
- 
+- ⚒Para ejecutar el modo playground o repl, ejecutar el siguiente comando `pipenv run start` (o `python ./src/main.py`)

@@ -10,7 +10,7 @@ pylint = "*"
 [dev-packages]
 
 [scripts]
-dev="python ./src/main.py"
+start="python ./src/main.py"
 
 [requires]
 python_version = "3.9"
