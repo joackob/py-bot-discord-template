@@ -1,6 +1,6 @@
 # BOT para Discord con Python
 
-En este template vamos a crear un bot la api de discord para python. Para llevar adelante este proyecto se recomienda leer el siguiente [tutorial](https://www.pragnakalp.com/create-discord-bot-using-python-tutorial-with-examples/) que es el más actualizado al día de la fecha (febrero de 2023).
+En este template vamos a crear un bot con la api de discord para python. Para llevar adelante este proyecto se recomienda leer el siguiente [tutorial](https://www.pragnakalp.com/create-discord-bot-using-python-tutorial-with-examples/) que es el más actualizado al día de la fecha (febrero de 2023).
 
 Vale la pena decir que según lo dispuesto por Discord (leer [aquí](https://support-dev.discord.com/hc/en-us/articles/4404772028055-Message-Content-Privileged-Intent-FAQ)), no será posible que los bots creados después de septiembre del 2022 puedan acceder a todos los mensajes y su contenido dentro de un servidor. Solo podrán leer aquellos mensajes que sean enviados por mensaje privado o haciendo mención al bot en cuestión. Esto no quita merito al proyecto y si bien limita la cantidad de funcionalidades disponibles, no necesariamente limita las posibilidades a generar con bots implementados a través de estas tecnologías.
 
