@@ -10,14 +10,15 @@ class FakeIAChat(IAChat):
 
 @dataclass
 class DiscordBot(Bot, Client):
+    ia: IAChat = FakeIAChat()
 
-    def __init__(self, tokenBotDiscord: str, iaToChat: IAChat = FakeIAChat()):
+    def __init__(self, tokenBotDiscord: str):
         Client.__init__(self, intents=Intents.all())
-        self.ia = iaToChat
-        self.run(token=tokenBotDiscord)
+        self.token = tokenBotDiscord
 
     def chatWith(self, ia: IAChat) -> None:
         self.ia = ia
+        self.run(token=self.token)
 
     async def on_ready(self):
         print(f"Estoy logeado como {self.user}")

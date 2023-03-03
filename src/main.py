@@ -6,8 +6,7 @@ from gpt.GPTIA import GPTIA
 
 def main():
     ia = GPTIA(tokenChatGPTSession=getenv('TOKEN_GPT_SESSION'))
-    bot = DiscordBot(tokenBotDiscord=getenv('TOKEN_BOT_DISCORD'),
-                     iaToChat=ia)
+    bot = DiscordBot(tokenBotDiscord=getenv('TOKEN_BOT_DISCORD'))
     app = App(bot=bot, ia=ia)
     app.run()
 
