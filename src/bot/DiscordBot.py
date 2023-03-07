@@ -33,4 +33,4 @@ class DiscordBot(Bot, Client):
             await message.channel.send('ok....zzzzz')
             await self.close()
         else:
-            await self._event_chat()
+            await self._handle_chat()

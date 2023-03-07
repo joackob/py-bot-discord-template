@@ -15,7 +15,7 @@ class IAChat:
 
 @dataclass
 class Bot:
-    _event_chat: Callable[[None], Awaitable[None]] = None
+    _handle_chat: Callable[[None], Awaitable[None]] = None
 
     @abstractmethod
     def run(self) -> None:
@@ -23,11 +23,11 @@ class Bot:
 
     @property
     def event_chat(self):
-        return self._event_chat
+        return self._handle_chat
 
     @event_chat.setter
     def event_chat(self, handle: Callable):
-        self._event_chat = handle
+        self._handle_chat = handle
 
     @abstractmethod
     async def get_query(self) -> str:
