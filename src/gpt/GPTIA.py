@@ -8,5 +8,8 @@ class GPTIA(ChatGPT, IAChat):
         install_chromedriver()
         ChatGPT.__init__(self, session_token=tokenChatGPTSession)
 
-    def chat(self, message: str) -> str:
-        return self.send_message(message=message)['message']
+    def run(self) -> None:
+        pass
+
+    async def chat(self, query: str) -> str:
+        return self.send_message(message=query)['message']

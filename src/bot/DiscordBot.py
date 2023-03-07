@@ -1,24 +1,24 @@
 from dataclasses import dataclass
 from discord import Client, Intents, Message
-from interfaces.interfaces import Bot, IAChat
-
-
-class FakeIAChat(IAChat):
-    def chat(self, message: str) -> str:
-        return f'No puedo responder a "{message}"'
+from interfaces.interfaces import Bot
 
 
 @dataclass
 class DiscordBot(Bot, Client):
-    ia: IAChat = FakeIAChat()
-
     def __init__(self, tokenBotDiscord: str):
         Client.__init__(self, intents=Intents.all())
-        self.token = tokenBotDiscord
+        Bot.__init__(self)
+        self.token: str = tokenBotDiscord
+        self.last_message: Message = None
 
-    def chatWith(self, ia: IAChat) -> None:
-        self.ia = ia
-        self.run(token=self.token)
+    def run(self):
+        Client.run(self, token=self.token)
+
+    async def get_query(self) -> str:
+        return self.last_message.content
+
+    async def send_response(self, response: str) -> None:
+        await self.last_message.channel.send(content=response)
 
     async def on_ready(self):
         print(f"Estoy logeado como {self.user}")
@@ -27,11 +27,10 @@ class DiscordBot(Bot, Client):
         if message.author == self.user:
             return
 
-        print(f'Escuche el mensaje: "{message.content}" de {message.author}')
+        self.last_message = message
 
         if 'duerme' in message.content:
             await message.channel.send('ok....zzzzz')
             await self.close()
         else:
-            response = self.ia.chat(message=message.content)
-            await message.channel.send(content=response)
+            await self._event_chat()
